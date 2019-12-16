@@ -1,6 +1,7 @@
 package com.victorsung.no2.web;
 
 import com.victorsung.no2.web.dto.HelloResponseDto;
+import com.victorsung.no2.web.dto.TestResponseDto;
 import jdk.nashorn.internal.objects.annotations.Getter;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,5 +19,10 @@ public class HelloController {
     @GetMapping("/hello/dto")
     public HelloResponseDto helloDto(@RequestParam String name,@RequestParam int age){
         return new HelloResponseDto(name,age);
+    }
+
+    @GetMapping("/test/dto")
+    public TestResponseDto testDto(@RequestParam Long id,@RequestParam String name){
+        return new TestResponseDto(id, name);
     }
 }

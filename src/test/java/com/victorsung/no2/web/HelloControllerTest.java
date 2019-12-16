@@ -43,4 +43,18 @@ public class HelloControllerTest {
                 .andExpect(jsonPath("$.age", is(age)));
     }
 
+
+    @Test
+    public void RESTAPI테스트() throws Exception {
+
+        Long id = 100L;
+        String name = "victorsung";
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/test/dto")
+                .param("id", String.valueOf(id))
+                .param("name", name))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id", is(id.intValue())))
+                .andExpect(jsonPath("$.name", is(name)));
+    }
 }

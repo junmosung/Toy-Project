@@ -32,6 +32,10 @@ repositories {
 dependencies {
     implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
 
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+//    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation('com.h2database:h2')
+
     // 1. Gradle은 컴파일 클래스 경로에만 종속성을 추가합니다
     compileOnly 'org.projectlombok:lombok:1.18.10'
     // 2. 주석 프로세서인 라이브러리에 종속성을 추가하려면 반드시 annotationProcessor 구성을 사용하여 주석 프로세서 클래스 경로에 추가해야 합니다.
